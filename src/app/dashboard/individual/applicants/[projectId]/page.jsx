@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import axiosInstance from '@/utils/axios';
-import { Clock, FileText, Loader, Check, MessageSquareText } from 'lucide-react';
+import { Loader, Check, MessageSquareText } from 'lucide-react';
 import { toast } from 'react-toastify';
 import Cookies from 'js-cookie';
 import { jwtDecode } from 'jwt-decode';
@@ -17,7 +17,6 @@ export default function ProjectApplicantsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [assigningCraftsman, setAssigningCraftsman] = useState(null);
-  const [userId, setUserId] = useState(null);
 
   useEffect(() => {
     const fetchUserIdAndApplicants = async () => {

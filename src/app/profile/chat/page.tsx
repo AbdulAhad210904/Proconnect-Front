@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { Phone, Video, Send, Menu } from 'lucide-react'
+import { Send, Menu } from 'lucide-react'
 
 export default function ChatInterface() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)

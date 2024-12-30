@@ -1,6 +1,6 @@
 import React from 'react';
 import { Shield, Clock, CreditCard } from 'lucide-react';
-import { NewsletterForm } from './NewsLetterForm';
+import { NewsLetterForm } from './NewsLetterForm';
 import { PricingFooterLinkProps } from '../Registration2/types';
 
 const PricingfooterLinks: PricingFooterLinkProps[] = [
@@ -55,8 +55,8 @@ export const PricingFooter: React.FC = () => (
             </a>
           ))}
         </nav>
-        <NewsletterForm onSubmit={(email) => console.log('Newsletter signup:', email)} />
-      </div>
+        <NewsLetterForm onSubmit={(email) => console.log('Newsletter signup:', email)} />
+        </div>
     </div>
     <section className="py-16 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto">

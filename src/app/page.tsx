@@ -2,7 +2,6 @@
 import * as React from 'react';
 import { Button } from '../components/Registration2/Button';
 import { SearchBar } from '../components/HomePage/Searchbar';
-import Image from 'next/image';
 import Link from 'next/link';
 import Testimonials from '@/components/testimonials';
 import { UserContext } from "@/app/layout";
@@ -89,11 +88,12 @@ export default function HomePage() {
           </p>
           <p className="text-gray-500 text-xs sm:text-sm md:text-lg font-extrabold">
             <span className="italic">
-              <span className="text-[#27aae2]">"</span>ProConnect is a comprehensive platform designed to meet all your
-              professional needs in one place. Whether you're a company looking
+              <span className="text-[#27aae2]">&ldquo;</span>ProConnect is a comprehensive platform designed to meet all your
+              professional needs in one place. Whether you&apos;re a company looking
               for top talent, an individual seeking your next big opportunity, or
               a professional looking for projects, ProConnect has everything you
-              need.<span className="text-[#27aae2]">"</span>
+              need.<span className="text-[#27aae2]">&rdquo;</span>
+
             </span>
           </p>
         </div>

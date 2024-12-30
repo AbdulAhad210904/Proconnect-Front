@@ -18,14 +18,6 @@ const Card = ({ className, ...props }) => (
   <div className={`bg-white rounded-lg shadow-md ${className}`} {...props} />
 );
 
-const CardHeader = ({ className, ...props }) => (
-  <div className={`p-4 sm:p-6 ${className}`} {...props} />
-);
-
-const CardTitle = ({ className, ...props }) => (
-  <h2 className={`text-xl sm:text-2xl font-semibold ${className}`} {...props} />
-);
-
 const CardContent = ({ className, ...props }) => (
   <div className={`p-6 sm:p-8 md:p-10 pt-0 w-full max-w-[80%] mx-auto ${className}`} {...props} />
 );
@@ -202,6 +194,7 @@ export default function ProjectForm() {
 
       selectedFiles.forEach((file, index) => {
         projectData.append(`projectImages`, file);
+        console.log(index);
       });
 
       await dispatch(createProject(projectData)).unwrap();

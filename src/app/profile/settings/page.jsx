@@ -137,7 +137,7 @@ export default function SettingsPage() {
       setSessions(fetchedSessions.sessions); // Update state with resolved data
       //console.log(fetchedSessions);
     } catch (error) {
-      //console.error("Error fetching connected browsers:", error.message);
+      console.log("Error fetching connected browsers:", error.message);
     } finally {
       setLoading(false); // Stop loading state
     }
@@ -168,7 +168,7 @@ export default function SettingsPage() {
       console.log(result.message); // Should print: "Session disconnected"
       window.location.reload();
     } catch (error) {
-      // console.error(error.message);  // Handle error (if any)
+      console.log(error.message);  // Handle error (if any)
     }
   };
   const handleSendPhoneVerificationCode = async () => {

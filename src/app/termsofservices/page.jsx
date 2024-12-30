@@ -174,7 +174,7 @@ export default function TermsPage() {
               <ul className="list-disc pl-5 mt-2 space-y-2">
                 <li>
                   Alle inhoud en materialen op het Platform, inclusief maar niet
-                  beperkt tot tekst, afbeeldingen, logo's en software, zijn
+                  beperkt tot tekst, afbeeldingen, logo&apos;s en software, zijn
                   eigendom van Pro--Connect.com of zijn licentiegevers en worden
                   beschermd door toepasselijke auteursrechten en andere
                   intellectuele eigendomsrechten.

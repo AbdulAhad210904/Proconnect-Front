@@ -1,68 +1,67 @@
-'use client'
-
-import { useState, useCallback } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { createBugReport } from '@/store/bug-reports/bugThunk' // Adjust the path as needed
-import { FileIcon } from 'lucide-react'
+"use client";
+import { useState, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { createBugReport } from '@/store/bug-reports/bugThunk'; // Adjust the path as needed
+import { FileIcon } from 'lucide-react';
 
 export default function FeatureReportPage() {
-  const [description, setDescription] = useState('')
-  const [additionalNotes, setAdditionalNotes] = useState('')
-  const [file, setFile] = useState<File | null>(null)
-  const [isDragging, setIsDragging] = useState(false)
+  const [description, setDescription] = useState('');
+  const [additionalNotes, setAdditionalNotes] = useState('');
+  const [file, setFile] = useState(null);
+  const [isDragging, setIsDragging] = useState(false);
 
-  const dispatch = useDispatch()
-  const { loading, error } = useSelector((state: any) => state.bugs)
+  const dispatch = useDispatch();
+  const { loading, error } = useSelector((state) => state.bugs);
 
-  const handleDragOver = useCallback((e: React.DragEvent) => {
-    e.preventDefault()
-    setIsDragging(true)
-  }, [])
+  const handleDragOver = useCallback((e) => {
+    e.preventDefault();
+    setIsDragging(true);
+  }, []);
 
-  const handleDragLeave = useCallback((e: React.DragEvent) => {
-    e.preventDefault()
-    setIsDragging(false)
-  }, [])
+  const handleDragLeave = useCallback((e) => {
+    e.preventDefault();
+    setIsDragging(false);
+  }, []);
 
-  const handleDrop = useCallback((e: React.DragEvent) => {
-    e.preventDefault()
-    setIsDragging(false)
-    const droppedFile = e.dataTransfer.files[0]
+  const handleDrop = useCallback((e) => {
+    e.preventDefault();
+    setIsDragging(false);
+    const droppedFile = e.dataTransfer.files[0];
     if (droppedFile && droppedFile.type.startsWith('image/')) {
-      setFile(droppedFile)
+      setFile(droppedFile);
     }
-  }, [])
+  }, []);
 
-  const handleFileChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedFile = e.target.files?.[0]
+  const handleFileChange = useCallback((e) => {
+    const selectedFile = e.target.files?.[0];
     if (selectedFile && selectedFile.type.startsWith('image/')) {
-      setFile(selectedFile)
+      setFile(selectedFile);
     }
-  }, [])
+  }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     if (!description || !file) {
-      alert('Bugbeschrijving en screenshot zijn verplicht.')
-      return
+      alert('Bugbeschrijving en screenshot zijn verplicht.');
+      return;
     }
 
     const bugData = {
       description,
       additionalInfo: additionalNotes,
       bugScreenshots: [file],
-    }
+    };
 
     try {
-      await dispatch(createBugReport(bugData)).unwrap()
-      alert('Bugrapport succesvol ingediend!')
-      setDescription('')
-      setAdditionalNotes('')
-      setFile(null)
+      await dispatch(createBugReport(bugData)).unwrap();
+      alert('Bugrapport succesvol ingediend!');
+      setDescription('');
+      setAdditionalNotes('');
+      setFile(null);
     } catch (err) {
-      alert(`Fout bij het indienen van bugrapport: ${err}`)
+      alert(`Fout bij het indienen van bugrapport: ${err}`);
     }
-  }
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -157,5 +156,5 @@ export default function FeatureReportPage() {
         </form>
       </main>
     </div>
-  )
+  );
 }

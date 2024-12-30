@@ -24,7 +24,7 @@ export function MissionSection() {
           gebruiksvriendelijke omgeving. Onze missie is het creëren van
           een veelzijdige marktplaats waar bedrijven vacatures kunnen
           plaatsen, aanemers opdrachten kunnen vinden, werkzoekenden hun
-          CV's kunnen uploaden en werknemers kunnen profiteren van
+          CV&apos;s kunnen uploaden en werknemers kunnen profiteren van
           innovatieve beloningssystemen zoals crypto.
         </p>
       </div>

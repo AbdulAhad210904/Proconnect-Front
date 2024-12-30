@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import PolicyCard from '../../components/PolicyCard';
-import { ReactComponent as VectorIcon } from '../../components/icons/Vector.svg';
 
 const policyData = [
   {

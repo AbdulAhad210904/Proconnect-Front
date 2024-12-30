@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Star, MessageCircle, Calendar, X, Loader } from 'lucide-react'
+import { Star, MessageCircle, X, Loader } from 'lucide-react'
 import { useRouter } from "next/navigation";
 import axiosInstance from '@/utils/axios';
 import FeedbackModal from "./FeedbackModal";
@@ -12,8 +12,6 @@ export default function CraftsmanProjectModal({
   project,
   modalType
 }) {
-  const [rating, setRating] = useState(0)
-  const [review, setReview] = useState(null)
   const [individualReview, setIndividualReview] = useState(null)
   const [craftsmanReview, setCraftsmanReview] = useState(null)
   const [isLoading, setIsLoading] = useState(true)

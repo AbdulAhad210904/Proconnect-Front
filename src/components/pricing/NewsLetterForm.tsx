@@ -2,7 +2,11 @@
 
 import React, { useState } from 'react';
 
-export const NewsLetterForm = () => {
+interface NewsLetterFormProps {
+  onSubmit: (email: string) => void;
+}
+
+export const NewsLetterForm: React.FC<NewsLetterFormProps> = ({ onSubmit }) => {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
@@ -11,11 +15,12 @@ export const NewsLetterForm = () => {
     setStatus('loading');
 
     try {
-      // Implement your newsletter signup logic here
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulated API call
+      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulated API call
+      onSubmit(email); // Call the parent's onSubmit function with the email
       setStatus('success');
       setEmail('');
     } catch (error) {
+      console.log(error);
       setStatus('error');
     }
   };
@@ -23,9 +28,7 @@ export const NewsLetterForm = () => {
   return (
     <div className="bg-[#27AAE2]/5 py-16 px-4">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-4">
-          Blijf op de hoogte
-        </h2>
+        <h2 className="text-3xl font-bold mb-4">Blijf op de hoogte</h2>
         <p className="text-xl text-gray-600 mb-8">
           Ontvang updates over nieuwe features en aanbiedingen
         </p>
@@ -51,7 +54,9 @@ export const NewsLetterForm = () => {
             <p className="mt-2 text-green-600">Bedankt voor uw aanmelding!</p>
           )}
           {status === 'error' && (
-            <p className="mt-2 text-red-600">Er is iets misgegaan. Probeer het later opnieuw.</p>
+            <p className="mt-2 text-red-600">
+              Er is iets misgegaan. Probeer het later opnieuw.
+            </p>
           )}
         </form>
       </div>

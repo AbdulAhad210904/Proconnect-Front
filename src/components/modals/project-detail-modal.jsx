@@ -443,7 +443,7 @@ const ProjectDetailsModal = ({ isOpen, onClose, project }) => {
         {project.status === 'completed' && (
           <div className="space-y-6 mt-6">
             <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-              <h3 className="text-lg sm:text-xl font-bold mb-3">Individual's Feedback:</h3>
+            <h3 className="text-lg sm:text-xl font-bold mb-3">Individual&apos;s Feedback:</h3>
               {individualReview ? (
                 <>
                   {renderRatingStars(individualReview.rating)}
@@ -454,7 +454,7 @@ const ProjectDetailsModal = ({ isOpen, onClose, project }) => {
               )}
             </div>
             <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-              <h3 className="text-lg sm:text-xl font-bold mb-3">Craftsman's Feedback:</h3>
+              <h3 className="text-lg sm:text-xl font-bold mb-3">Craftsman&apos;s Feedback:</h3>
               {craftsmanReview ? (
                 <>
                   {renderRatingStars(craftsmanReview.rating)}

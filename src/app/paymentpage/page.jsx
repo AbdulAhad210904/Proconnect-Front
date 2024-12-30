@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { PaymentMethod } from "@/Components/Pricing/PaymentMethod";
-import { AdvantageItem } from "@/Components/Pricing/AdvantageItem";
+import { PaymentMethod } from "@/components/pricing/PaymentMethod";
+import { AdvantageItem } from "@/components/pricing/AdvantageItem";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 

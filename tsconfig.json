@@ -23,7 +23,7 @@
     }
   },
 
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/testimonials.jsx","src/components/**/*", "src/app/profile/chat/page.tsx", "src/app/community/general/page.jsx", "src/app/feedback/page.jsx", "src/app/community/features/page.jsx", "src/app/community/news/page.jsx", "src/app/profile/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/testimonials.jsx","src/components/**/*", "src/app/profile/chat/page.tsx", "src/app/community/general/page.jsx", "src/app/feedback/page.jsx", "src/app/community/features/page.jsx", "src/app/community/news/page.jsx", "src/app/profile/page.jsx", "src/app/community/bugs/page.jsx"],
 
   "exclude": ["node_modules"]
 }

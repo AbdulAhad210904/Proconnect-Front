@@ -47,6 +47,9 @@ export const createPost = createAsyncThunk(
   'forum/createPost',
   async (postData, { rejectWithValue, getState }) => {
     try {
+      //console get state
+      const state = getState();
+      console.log(state);
       // Make the request with Authorization header
       const response = await axiosInstance.post(`/api/forum/posts`, postData);
 

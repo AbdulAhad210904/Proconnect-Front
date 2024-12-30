@@ -127,6 +127,7 @@ export default function RegisterForm() {
           'Content-Type': 'multipart/form-data',
         },
       })
+      console.log(response);
       toast.success('Registration successful! You can now log in.')
       router.push('/auth/login')
     } catch (error) {

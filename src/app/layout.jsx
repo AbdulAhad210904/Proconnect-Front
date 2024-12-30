@@ -2,7 +2,6 @@
 import { useState, useEffect, createContext } from "react";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import HeaderWrapper from "./HeaderWrapper";
 import Header1 from "@/components/header/header1";
 import Header2 from "@/components/header/header2";
 import Footer from "@/components/footer/footer";

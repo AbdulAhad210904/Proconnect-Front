@@ -15,7 +15,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function CraftsmanDashboard() {
-  var UserId = "none";
+  // var UserId = "none";
   const dispatch = useDispatch();
   const { 
     appliedProjects, 

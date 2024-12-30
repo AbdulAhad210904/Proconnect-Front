@@ -35,6 +35,7 @@ export const updateNews = createAsyncThunk('news/updateNews', async ({ id, newsD
 export const deleteNews = createAsyncThunk('news/deleteNews', async (id, thunkAPI) => {
   try {
     const response = await axiosInstance.delete(`/api/news/${id}`);
+    console.log(response);
     return { id };
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data);

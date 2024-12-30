@@ -1,9 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
 import { Star } from 'lucide-react'
-import Image from 'next/image'
-
 const feedbacks = [
   {
     id: 1,

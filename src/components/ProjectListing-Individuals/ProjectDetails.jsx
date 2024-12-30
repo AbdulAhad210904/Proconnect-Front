@@ -1,7 +1,8 @@
 import Image from "next/image"
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ProjectListing-individuals/dialog"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ProjectListing-Individuals/dialog"
 
 export function ProjectDetails({ project, open, onOpenChange }) {
+  console.log(project);
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-2xl">

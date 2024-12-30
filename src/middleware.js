@@ -1,30 +1,30 @@
 import { NextResponse } from 'next/server';
-import { jwtVerify } from 'jose';
+// import { jwtVerify } from 'jose';
 
 // List of public routes that don't require authentication
 const publicRoutes = ['/', '/aboutus', '/privacy-policy', '/termsofservices', '/support', '/auth/login', '/auth/register','/payment-success'];
 
 // Function to verify the JWT token
-async function verifyToken(token) {
-  if (!token) return false;
+// async function verifyToken(token) {
+//   if (!token) return false;
 
-  try {
-    // Replace 'your-secret-key' with your actual JWT secret key
-    const secretKey = new TextEncoder().encode(process.env.JWT_SECRET);
-    const { payload } = await jwtVerify(token, secretKey);
+//   try {
+//     // Replace 'your-secret-key' with your actual JWT secret key
+//     const secretKey = new TextEncoder().encode(process.env.JWT_SECRET);
+//     const { payload } = await jwtVerify(token, secretKey);
 
-    // Check if the token is expired
-    const currentTimestamp = Math.floor(Date.now() / 1000);
-    if (payload.exp && payload.exp < currentTimestamp) {
-      return false;
-    }
+//     // Check if the token is expired
+//     const currentTimestamp = Math.floor(Date.now() / 1000);
+//     if (payload.exp && payload.exp < currentTimestamp) {
+//       return false;
+//     }
 
-    return true;
-  } catch (error) {
-    console.error('Token verification failed:', error);
-    return false;
-  }
-}
+//     return true;
+//   } catch (error) {
+//     console.error('Token verification failed:', error);
+//     return false;
+//   }
+// }
 
 export async function middleware(request) {
   const { pathname } = request.nextUrl;

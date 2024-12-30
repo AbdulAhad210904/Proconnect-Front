@@ -10,7 +10,7 @@ import { jwtDecode } from "jwt-decode";
 
 export default function GeneralPage() {
   const dispatch = useDispatch();
-  const { posts, loading, error } = useSelector((state) => state.posts);
+  const { posts, error } = useSelector((state) => state.posts);
   
   const [newPost, setNewPost] = useState('');
   const [newReply, setNewReply] = useState('');

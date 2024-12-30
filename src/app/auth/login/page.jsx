@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Cookies from 'js-cookie'
 import { IoEyeOffSharp, IoEyeSharp } from "react-icons/io5"
-import Image from 'next/image'
 import { AnimatedLogo } from "@/components/logo/LogoAnimation"
 
 const BackgroundPattern = () => (

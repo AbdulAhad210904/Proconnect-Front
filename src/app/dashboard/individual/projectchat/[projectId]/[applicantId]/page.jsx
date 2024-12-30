@@ -21,10 +21,10 @@ export default function IndividualChatPage() {
   const messagesEndRef = useRef(null);
   const [currentProject, setCurrentProject] = useState(null);
 
-  const projects = [
-    { id: 1, title: 'Project 1', color: 'bg-orange-400' },
-    { id: 2, title: 'Project 2', color: 'bg-green-400' },
-  ];
+  // const projects = [
+  //   { id: 1, title: 'Project 1', color: 'bg-orange-400' },
+  //   { id: 2, title: 'Project 2', color: 'bg-green-400' },
+  // ];
 
   useEffect(() => {
     const token = Cookies.get('token');
@@ -107,6 +107,7 @@ export default function IndividualChatPage() {
       const { data } = await axiosInstance.post(`/api/chats/initialize/${projectId}/${applicantId}`);
       setChatId(data._id);
       setMessages(data.messages);
+      console.log(userId);
     } catch (error) {
       console.error('Error initializing chat:', error);
     }

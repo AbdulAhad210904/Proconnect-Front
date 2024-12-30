@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Star, Edit2, Plus, Loader } from 'lucide-react';
+import { Edit2, Plus, Loader } from 'lucide-react';
 import Image from 'next/image';
 import {
   getProfile,
