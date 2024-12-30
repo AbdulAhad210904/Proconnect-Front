@@ -13,6 +13,7 @@ import { useRouter } from 'next/navigation';
 export default function ProjectApplicantsPage() {
   const router = useRouter();
   const { projectId } = useParams();
+  const {userId, setUserId} = useState(null);
   const [applicants, setApplicants] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -32,6 +33,7 @@ export default function ProjectApplicantsPage() {
           throw new Error('UserId not found in token');
         }
         setUserId(fetchedUserId);
+        console.log(userId);
 
         const response = await axiosInstance.get(`/api/projects/getapplicants/${projectId}`);
         setApplicants(response.data);
