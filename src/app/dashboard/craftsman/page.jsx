@@ -15,7 +15,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function CraftsmanDashboard() {
-  // var UserId = "none";
+  var UserId = "none";
   const dispatch = useDispatch();
   const { 
     appliedProjects, 
@@ -40,6 +40,7 @@ export default function CraftsmanDashboard() {
         const decodedToken = jwtDecode(token);
         const userId = decodedToken.userId;
         UserId = userId;
+        console.log(UserId);
         if (!userId) {
           console.error('UserId not found in token');
           return;
