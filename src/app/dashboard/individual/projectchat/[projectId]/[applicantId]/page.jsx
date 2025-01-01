@@ -44,7 +44,7 @@ export default function IndividualChatPage() {
 
   useEffect(() => {
     if (!socketRef.current) {
-      socketRef.current = io('http://localhost:8000');
+      socketRef.current = io('https://proc-back.onrender.com');
     }
 
     return () => {

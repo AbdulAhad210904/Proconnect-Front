@@ -15,7 +15,7 @@ const PaymentResultPage = () => {
 
     const fetchPaymentDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/api/payments/${id}`);
+        const response = await fetch(`https://proc-back.onrender.com/api/payments/${id}`);
         if (!response.ok) {
           throw new Error("Failed to fetch payment details");
         }
@@ -35,7 +35,7 @@ const PaymentResultPage = () => {
     if (!paymentDetails) return;
 
     try {
-      const response = await fetch("http://localhost:8000/api/create-payment", {
+      const response = await fetch("https://proc-back.onrender.com/api/create-payment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

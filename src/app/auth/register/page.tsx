@@ -122,7 +122,7 @@ export default function RegisterForm() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/users/register', submitData, {
+      const response = await axios.post('https://proc-back.onrender.com/api/users/register', submitData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

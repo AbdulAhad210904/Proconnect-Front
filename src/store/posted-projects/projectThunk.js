@@ -40,7 +40,7 @@ export const fetchProjectApplicants = createAsyncThunk(
   }
 );
 
-// Create a new project http://localhost:8000/api/projects/createproject
+// Create a new project https://proc-back.onrender.com/api/projects/createproject
 export const createProject = createAsyncThunk(
   "projects/createProject",
   async (projectData, { rejectWithValue }) => {
